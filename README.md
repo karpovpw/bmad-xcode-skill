@@ -6,7 +6,7 @@ The skill does **not** bundle BMad sources. It always reads from the BMad files 
 
 ## What’s inside
 
-- `bmad/` — the Codex skill folder
+- `bmad/` — the Codex/Claude skill folder
 - `bmad/SKILL.md` — routing and usage rules
 - No bundled BMad resources. The skill reads from your project’s `./_bmad` directory.
 
