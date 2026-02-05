@@ -1,0 +1,4 @@
+interface:
+  display_name: "BMad Method"
+  short_description: "Full BMad personas, workflows, and tasks"
+  default_prompt: "Use $bmad to run a BMad workflow or persona by prefixing the prompt with 'bmad'."
