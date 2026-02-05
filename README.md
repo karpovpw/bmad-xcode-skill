@@ -12,7 +12,7 @@ The skill does **not** bundle BMad sources. It always reads from the BMad files 
 
 ## How Xcode skills work (short version)
 
-Xcode’s agentic coding looks for a `codex` directory and loads skill folders inside it. A skill is just a folder containing a `SKILL.md` file that tells Codex how to use the skill.
+Xcode’s agentic coding looks for a `codex` or `ClaudeAgentConfig` directory and loads skill folders inside it. A skill is just a folder containing a `SKILL.md` file that tells Codex or Claude how to use the skill.
 
 This skill routes prompts that begin with `bmad` to the correct BMad workflow/persona/task.
 
