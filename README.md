@@ -55,14 +55,32 @@ EOF
 
 ## Install (Claude)
 
-If you use Claude inside Xcode, put the same `bmad` folder in Claude’s skills directory:
+1. Create the Claude skills directory if it doesn’t exist:
 
 ```bash
 mkdir -p ~/Library/Developer/Xcode/CodingAssistant/ClaudeAgentConfig/skills
+```
+
+2. Copy the `bmad` folder into it:
+
+```bash
 cp -R ./bmad ~/Library/Developer/Xcode/CodingAssistant/ClaudeAgentConfig/skills/
 ```
 
-If your Claude client doesn’t support skills, you can still use BMad by copying the `SKILL.md` contents into a project-level agent instruction file.
+3. (Recommended) Add `AGENTS.md` next to the skill folder to enforce BMad routing:
+
+```bash
+cat <<'EOF' > ~/Library/Developer/Xcode/CodingAssistant/ClaudeAgentConfig/AGENTS.md
+# Xcode Claude Agent Policy
+
+This Claude agent must operate specifically through the BMad Method.
+
+Rules:
+1. Treat any prompt prefixed with `bmad` as a BMad command and route it to the matching workflow, persona, or task.
+2. Xcode Claude does not support slash commands. If any BMad docs mention `/bmad-help`, treat it as `bmad help`.
+3. If intent is unclear, default to the BMad Master persona and follow its activation steps.
+EOF
+```
 
 ## Where the BMad files live (explicit path)
 
@@ -81,9 +99,5 @@ Inside each project:
 
 ## Notes
 
-- Xcode Codex does not support slash commands. Use `bmad help` instead of `/bmad-help`.
+- Xcode agents does not support slash commands. Use `bmad help` instead of `/bmad-help`.
 - All names and behaviors are sourced from the BMad manifests; nothing is renamed or simplified.
-
-## License
-
-Add the appropriate license for your BMad distribution here.
