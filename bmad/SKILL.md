@@ -82,6 +82,15 @@ If the user asks for help or wants a list:
 - `list personas` → read agent manifest and show a numbered list
 - `list tasks` → read task manifest and show a numbered list
 
+## Xcode Slash-Command Translation
+
+Some BMad workflows output slash-style commands (e.g., `/bmad:...`) that Xcode Codex cannot execute. When such output appears, translate it into an equivalent `bmad` command for the user.
+
+Rules:
+- Replace any leading `/bmad` (with or without `:`) with `bmad`.
+- If the output contains a structured path like `/bmad:gds:workflows:create-story`, map it to `bmad create-story`.
+- Preserve any referenced parameters (e.g., `story_key=...`) and present them as follow-up instructions for the user.
+
 ## Naming and Fidelity
 
 Preserve all names and behaviors exactly as defined in the manifests and agent/workflow files. Do not rename, summarize, or “simplify” BMad concepts unless the user requests it.
