@@ -1,6 +1,6 @@
-# BMad Method for Xcode 26.3 (Codex + Claude)
+# BMad Method for Xcode >=26.3 (Codex + Claude)
 
-This repo packages the BMad Method as an Xcode skill so you can use it inside Xcode 26.3’s agentic coding experience.
+This repo packages the BMad Method as a skill that can be used inside Xcode agents configuration.
 
 The skill does **not** bundle BMad sources. It always reads from the BMad files in your **project** (`{project-root}/_bmad`), so when BMad updates, you’re automatically current.
 
